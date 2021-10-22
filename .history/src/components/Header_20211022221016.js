@@ -1,19 +1,15 @@
-import React, { useEffect, useRef } from 'react'
+import React, {useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { HeaderNav, Logo, Menu } from '../styles/HeaderStyles'
 import { Container, Flex } from '../styles/GlobalStyles'
 import { useGlobalStateContext, useGlobalDispatchContext } from '../context/context'
 
-// Menu Locked
+
 import useElementPosition from '../hooks/useElementPosition'
 
-const Header = ({ onCursor, toggleMenu, setToggleMenu, menuPosition, setMenuPosition }) => {
+const Header = ({ onCursor, toggleMenu, setToggleMenu }) => {
     const dispatch = useGlobalDispatchContext()
     const { currentTheme } = useGlobalStateContext()
-
-    const hamburger = useRef(null)
-
-    const position = useElementPosition(hamburger)
 
     const toggleTheme = () => {
         if(currentTheme === "dark") {
@@ -21,12 +17,6 @@ const Header = ({ onCursor, toggleMenu, setToggleMenu, menuPosition, setMenuPosi
         } else {
             dispatch({ type: "TOGGLE_THEME", theme: "dark" })
         }
-    }
-
-    // Menu Hover Locked 
-    const menuHover = () => {
-        onCursor("locked")
-        setMenuPosition({ x: position.x, y: position.y + 72 })
     }
 
     useEffect(() => {
@@ -47,7 +37,7 @@ const Header = ({ onCursor, toggleMenu, setToggleMenu, menuPosition, setMenuPosi
                     <Logo
                         onMouseEnter={() => onCursor("hovered")}
                         onMouseLeave={onCursor}
-                    > 
+                    >
                         <Link to="/">FURR</Link>
                         <span
                             onClick={toggleTheme}
@@ -57,10 +47,8 @@ const Header = ({ onCursor, toggleMenu, setToggleMenu, menuPosition, setMenuPosi
                         <Link to="/">FURR</Link>
                     </Logo>
                     <Menu
-                        ref={hamburger}
                         onClick={() => setToggleMenu(!toggleMenu)}
-                        // onMouseEnter={() => onCursor("hovered")}
-                        onMouseEnter={menuHover}
+                        onMouseEnter={() => onCursor("hovered")}
                         onMouseLeave={onCursor}
                     >
                         <button>

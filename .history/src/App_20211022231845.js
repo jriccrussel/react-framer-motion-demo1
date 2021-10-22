@@ -36,6 +36,7 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
 
+
   const [menuPosition, setMenuPosition] = useState({
     x: 0,
     y: 0,
@@ -47,7 +48,8 @@ function App() {
     text: "#fff",
     red: "#ea291e",
     left: `${menuPosition.x}px`,
-    top: `${menuPosition.y}px`,    
+    top: `${menuPosition.y}px`,
+    
   }
 
   const lightTheme = {
@@ -56,6 +58,7 @@ function App() {
     red: "#ea291e",
     left: `${menuPosition.x}px`,
     top: `${menuPosition.y}px`,
+
   }
 
   // "currentTheme" - Dark mode theme toggle Context

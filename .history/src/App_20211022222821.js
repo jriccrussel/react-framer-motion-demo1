@@ -35,27 +35,16 @@ const GlobalStyle = createGlobalStyle`
 `
 
 function App() {
-
-  const [menuPosition, setMenuPosition] = useState({
-    x: 0,
-    y: 0,
-  })
   
   // Dark mode toogle
   const darkTheme = {
     background: "#000",
-    text: "#fff",
-    red: "#ea291e",
-    left: `${menuPosition.x}px`,
-    top: `${menuPosition.y}px`,    
+    text: "#fff"
   }
 
   const lightTheme = {
     background: "#fff",
-    text: "#000",
-    red: "#ea291e",
-    left: `${menuPosition.x}px`,
-    top: `${menuPosition.y}px`,
+    text: "#000"
   }
 
   // "currentTheme" - Dark mode theme toggle Context
@@ -71,6 +60,10 @@ function App() {
   }
 
   const [toggleMenu, setToggleMenu] = useState(false)
+  const [menuPosition, setMenuPosition] = useState({
+    x: x,
+    y: y,
+  })
 
   return (
     // Context "TOGGLE_THEME" => set  <ThemeProvider theme={currentTheme === "dark" ? darkTheme : lightTheme}> => const toggleTheme && window.localStorage.setItem("theme", currentTheme) && <span onClick={toggleTheme} onMouseEnter={() => onCursor("pointer")} onMouseLeave={onCursor} ></span> | inig click ma change ang color sa theme
@@ -81,8 +74,6 @@ function App() {
         onCursor={onCursor}
         toggleMenu={toggleMenu}
         setToggleMenu={setToggleMenu}
-        menuPosition={menuPosition}
-        setMenuPosition={setMenuPosition}
       />
       <Navigation 
         toggleMenu={toggleMenu}

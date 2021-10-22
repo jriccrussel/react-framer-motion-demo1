@@ -1,8 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Container, Flex } from '../../styles/GlobalStyles'
-import { motion, useAnimation } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-
 
 import { 
     About, 
@@ -12,8 +9,6 @@ import {
     AccordionIcon, 
     AccordionContent 
 } from '../../styles/HomeStyles'
-
-import { useGlobalStateContext } from '../../context/context'
 
 // Accordion Data
 const accordionIds = [
@@ -72,35 +67,9 @@ const accordionIds = [
     },
 ]
 
-const HomeAbout = ({onCursor}) => {
-    const [expanded, setExpanded] = useState(0)
-    const animation = useAnimation()
-
-    const [aboutRef, inView] = useInView({
-        triggerOnce: true,
-        rootMargin: "-300px",
-    })
-    
-    useEffect(() => {
-        if (inView) {
-            animation.start("visible")
-        }
-    }, [animation, inView])
-
-    return ( 
-        <HomeAboutSection
-            ref={aboutRef}
-            animate={animation}
-            initial="hidden"
-            variants={{
-                visible: {
-                opacity: 1,
-                y: 0,
-                    transition: { duration: 0.8 , ease: [ 0.6 , 0.05 , -0.01 , 0.9 ] },
-                },
-                hidden: { opacity: 0, y: 72 },
-            }}
-        >
+const HomeAbout = () => {
+    return (
+        <HomeAboutSection>
             <Container>
                 <Flex alignTop>
                     <About>
@@ -121,13 +90,7 @@ const HomeAbout = ({onCursor}) => {
                         <h3>Services</h3>
                         {accordionIds.map((details, index) => {
                             return (
-                                <Accordion
-                                    key={index}
-                                    details={details}
-                                    expanded={expanded}
-                                    setExpanded={setExpanded}
-                                    onCursor={onCursor}
-                                />
+                                <Accordion key={index} details={details} />
                             )
                         })}
                     </Services>
@@ -137,43 +100,19 @@ const HomeAbout = ({onCursor}) => {
     )
 }
 
-const Accordion = ({ details, expanded, setExpanded, onCursor }) => {
+const Accordion = ({details}) => {
     const {id, title, results} = details
-
-    const isOpen = id === expanded
-    const [hovered, setHovered] = useState(false)
-
-    const {currentTheme} = useGlobalStateContext()
 
     return (
         <>
-            <AccordionHeader
-                onClick={() => setExpanded(isOpen ? false : id)}
-                onMouseEnter={() => onCursor("hovered")}
-                onMouseLeave={onCursor}
-                onHoverStart={() => setHovered(!hovered)}
-                onHoverEnd={() => setHovered(!hovered)}
-                whileHover={{
-                    color: !isOpen && currentTheme === "dark" ? "#ffffff" : "#000000"
-                }}
-            >
+            <AccordionHeader>
                 <AccordionIcon>
-                    <motion.span
-                        animate={{ rotate: isOpen || hovered ? 0 : 45, x: 3 }}
-                        transition={{ duration: 0.2 , ease: [ 0.6 , 0.05 , -0.01 , 0.9 ] }}
-                    ></motion.span>
-                    <motion.span
-                        animate={{ rotate: isOpen || hovered ? 0 : -45, x: -3 }}
-                        transition={{ duration: 0.2 , ease: [ 0.6 , 0.05 , -0.01 , 0.9 ] }}
-                    ></motion.span>
+                    <span></span>
+                    <span></span>
                 </AccordionIcon>
                 {title}
             </AccordionHeader>
-            <AccordionContent
-                key="content"
-                animate={{ height: isOpen ? "100%" : "0" }}
-                transition={{ duration: 0.8 , ease: [ 0.6 , 0.05 , -0.01 , 0.9 ] }}
-            >
+            <AccordionContent>
                 {results.map((result, index) => (
                     <span key={index}>{result}</span>
                 ))}

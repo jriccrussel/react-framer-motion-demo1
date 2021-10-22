@@ -76,31 +76,8 @@ const HomeAbout = ({onCursor}) => {
     const [expanded, setExpanded] = useState(0)
     const animation = useAnimation()
 
-    const [aboutRef, inView] = useInView({
-        triggerOnce: true,
-        rootMargin: "-300px",
-    })
-    
-    useEffect(() => {
-        if (inView) {
-            animation.start("visible")
-        }
-    }, [animation, inView])
-
-    return ( 
-        <HomeAboutSection
-            ref={aboutRef}
-            animate={animation}
-            initial="hidden"
-            variants={{
-                visible: {
-                opacity: 1,
-                y: 0,
-                    transition: { duration: 0.8 , ease: [ 0.6 , 0.05 , -0.01 , 0.9 ] },
-                },
-                hidden: { opacity: 0, y: 72 },
-            }}
-        >
+    return (
+        <HomeAboutSection>
             <Container>
                 <Flex alignTop>
                     <About>

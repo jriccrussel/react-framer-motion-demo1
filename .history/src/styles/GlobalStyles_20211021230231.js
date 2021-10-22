@@ -65,19 +65,19 @@ export const Cursor = styled.div`
         border: 4px solid #ea281e;
         border: 4px solid #ea281e;
     }
-    &.locked {
+    /* &.locked {
         background: transparent !important;
         width: 56px;
         height: 56px;
         border: 4px solid ${props => props.theme.text} !important;
         top: ${props => props.theme.top} !important;
         left: ${props => props.theme.left} !important;
-    }
+    } */
     &.nav-open {
         background: ${props => props.theme.text};
     }
-    &.nav-open,
+    /* &.nav-open,
     &.locked {
         border: 4px solid ${props => props.theme.text} !important;
-    }
+    } */
 `

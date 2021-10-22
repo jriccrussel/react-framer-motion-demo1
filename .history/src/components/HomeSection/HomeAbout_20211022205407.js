@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Container, Flex } from '../../styles/GlobalStyles'
-import { motion, useAnimation } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-
+import { motion } from 'framer-motion'
 
 import { 
     About, 
@@ -12,8 +10,6 @@ import {
     AccordionIcon, 
     AccordionContent 
 } from '../../styles/HomeStyles'
-
-import { useGlobalStateContext } from '../../context/context'
 
 // Accordion Data
 const accordionIds = [
@@ -74,33 +70,9 @@ const accordionIds = [
 
 const HomeAbout = ({onCursor}) => {
     const [expanded, setExpanded] = useState(0)
-    const animation = useAnimation()
 
-    const [aboutRef, inView] = useInView({
-        triggerOnce: true,
-        rootMargin: "-300px",
-    })
-    
-    useEffect(() => {
-        if (inView) {
-            animation.start("visible")
-        }
-    }, [animation, inView])
-
-    return ( 
-        <HomeAboutSection
-            ref={aboutRef}
-            animate={animation}
-            initial="hidden"
-            variants={{
-                visible: {
-                opacity: 1,
-                y: 0,
-                    transition: { duration: 0.8 , ease: [ 0.6 , 0.05 , -0.01 , 0.9 ] },
-                },
-                hidden: { opacity: 0, y: 72 },
-            }}
-        >
+    return (
+        <HomeAboutSection>
             <Container>
                 <Flex alignTop>
                     <About>
@@ -143,8 +115,6 @@ const Accordion = ({ details, expanded, setExpanded, onCursor }) => {
     const isOpen = id === expanded
     const [hovered, setHovered] = useState(false)
 
-    const {currentTheme} = useGlobalStateContext()
-
     return (
         <>
             <AccordionHeader
@@ -153,9 +123,6 @@ const Accordion = ({ details, expanded, setExpanded, onCursor }) => {
                 onMouseLeave={onCursor}
                 onHoverStart={() => setHovered(!hovered)}
                 onHoverEnd={() => setHovered(!hovered)}
-                whileHover={{
-                    color: !isOpen && currentTheme === "dark" ? "#ffffff" : "#000000"
-                }}
             >
                 <AccordionIcon>
                     <motion.span

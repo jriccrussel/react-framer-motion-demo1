@@ -4,10 +4,10 @@ import { HeaderNav, Logo, Menu } from '../styles/HeaderStyles'
 import { Container, Flex } from '../styles/GlobalStyles'
 import { useGlobalStateContext, useGlobalDispatchContext } from '../context/context'
 
-// Menu Locked
+
 import useElementPosition from '../hooks/useElementPosition'
 
-const Header = ({ onCursor, toggleMenu, setToggleMenu, menuPosition, setMenuPosition }) => {
+const Header = ({ onCursor, toggleMenu, setToggleMenu, setMenuPosition }) => {
     const dispatch = useGlobalDispatchContext()
     const { currentTheme } = useGlobalStateContext()
 
@@ -57,11 +57,11 @@ const Header = ({ onCursor, toggleMenu, setToggleMenu, menuPosition, setMenuPosi
                         <Link to="/">FURR</Link>
                     </Logo>
                     <Menu
-                        ref={hamburger}
                         onClick={() => setToggleMenu(!toggleMenu)}
                         // onMouseEnter={() => onCursor("hovered")}
                         onMouseEnter={menuHover}
                         onMouseLeave={onCursor}
+                        ref={hamburger}
                     >
                         <button>
                             <span></span>

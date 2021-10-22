@@ -7,7 +7,7 @@ import { useGlobalStateContext, useGlobalDispatchContext } from '../context/cont
 // Menu Locked
 import useElementPosition from '../hooks/useElementPosition'
 
-const Header = ({ onCursor, toggleMenu, setToggleMenu, menuPosition, setMenuPosition }) => {
+const Header = ({ onCursor, toggleMenu, setToggleMenu, setMenuPosition }) => {
     const dispatch = useGlobalDispatchContext()
     const { currentTheme } = useGlobalStateContext()
 
