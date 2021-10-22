@@ -19,7 +19,6 @@ const HomeMain = () => {
     return (
         <>
             <HomeBanner onCursor={onCursor}/>
-            <HomeContent />
         </>
     )
 }

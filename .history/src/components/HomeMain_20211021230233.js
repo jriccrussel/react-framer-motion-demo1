@@ -1,10 +1,7 @@
 import React from 'react'
 import HomeBanner from './HomeSection/HomeBanner'
-import HomeContent from './HomeSection/HomeContent'
-
 // Context
 import { useGlobalStateContext, useGlobalDispatchContext } from '../context/context'
-
 
 const HomeMain = () => {
 
@@ -19,7 +16,6 @@ const HomeMain = () => {
     return (
         <>
             <HomeBanner onCursor={onCursor}/>
-            <HomeContent />
         </>
     )
 }
