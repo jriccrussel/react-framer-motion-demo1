@@ -11,10 +11,6 @@ import {
     NavVideos,
 } from '../styles/NavigationStyles'
 
-import { FooterContent, FooterSocial } from '../styles/FooterStyles'
-
-import { Instagram, Facebook, Vimeo } from '../assets/svg/social-icons'
-
 import NavVidOne from "../assets/video/featured-video.mp4"
 import NavVidTwo from "../assets/video/easy.mp4"
 import NavVidThree from "../assets/video/make-it-zero.mp4"
@@ -144,41 +140,7 @@ const Navigation = ({toggleMenu, setToggleMenu, onCursor}) => {
                                     })}
                                 </ul>
                             </NavList>
-
-                            <NavFooter>
-                                <Flex spaceBetween>
-                                    <FooterContent>
-                                        <p>info@furrow.studio</p>
-                                    </FooterContent>
-                                    <FooterContent wider>
-                                        <p>902.315.1279</p>
-                                    </FooterContent>
-                                    <FooterSocial>
-                                        <Link  
-                                            onMouseEnter={() => onCursor("pointer")}
-                                            onMouseLeave={onCursor}
-                                            href="/"
-                                        >
-                                            <Instagram />
-                                        </Link>
-                                        <Link 
-                                            onMouseEnter={() => onCursor("pointer")}
-                                            onMouseLeave={onCursor}
-                                            href="/"
-                                        >
-                                            <Facebook />
-                                        </Link>
-                                        <Link 
-                                            onMouseEnter={() => onCursor("pointer")}
-                                            onMouseLeave={onCursor}
-                                            href="/"
-                                        >
-                                            <Vimeo />
-                                        </Link>
-                                    </FooterSocial>
-                                </Flex>
-                            </NavFooter>
-
+                            <NavFooter></NavFooter>
                             <NavVideos>
                                 <motion.div animate={{ width: showVid.show ? 0 : "100%" }} className="reveal"></motion.div>
                                 <div className="video">

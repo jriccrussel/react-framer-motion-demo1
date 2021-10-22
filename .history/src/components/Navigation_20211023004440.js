@@ -155,21 +155,21 @@ const Navigation = ({toggleMenu, setToggleMenu, onCursor}) => {
                                     </FooterContent>
                                     <FooterSocial>
                                         <Link  
-                                            onMouseEnter={() => onCursor("pointer")}
+                                            onMouseEnter={() => onCursor("hovered")}
                                             onMouseLeave={onCursor}
                                             href="/"
                                         >
                                             <Instagram />
                                         </Link>
                                         <Link 
-                                            onMouseEnter={() => onCursor("pointer")}
+                                            onMouseEnter={() => onCursor("hovered")}
                                             onMouseLeave={onCursor}
                                             href="/"
                                         >
                                             <Facebook />
                                         </Link>
                                         <Link 
-                                            onMouseEnter={() => onCursor("pointer")}
+                                            onMouseEnter={() => onCursor("hovered")}
                                             onMouseLeave={onCursor}
                                             href="/"
                                         >

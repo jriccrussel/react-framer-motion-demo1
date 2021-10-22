@@ -13,8 +13,6 @@ import {
 
 import { FooterContent, FooterSocial } from '../styles/FooterStyles'
 
-import { Instagram, Facebook, Vimeo } from '../assets/svg/social-icons'
-
 import NavVidOne from "../assets/video/featured-video.mp4"
 import NavVidTwo from "../assets/video/easy.mp4"
 import NavVidThree from "../assets/video/make-it-zero.mp4"
@@ -155,21 +153,21 @@ const Navigation = ({toggleMenu, setToggleMenu, onCursor}) => {
                                     </FooterContent>
                                     <FooterSocial>
                                         <Link  
-                                            onMouseEnter={() => onCursor("pointer")}
+                                            onMouseEnter={() => onCursor("hovered")}
                                             onMouseLeave={onCursor}
                                             href="/"
                                         >
                                             <Instagram />
                                         </Link>
                                         <Link 
-                                            onMouseEnter={() => onCursor("pointer")}
+                                            onMouseEnter={() => onCursor("hovered")}
                                             onMouseLeave={onCursor}
                                             href="/"
                                         >
                                             <Facebook />
                                         </Link>
                                         <Link 
-                                            onMouseEnter={() => onCursor("pointer")}
+                                            onMouseEnter={() => onCursor("hovered")}
                                             onMouseLeave={onCursor}
                                             href="/"
                                         >

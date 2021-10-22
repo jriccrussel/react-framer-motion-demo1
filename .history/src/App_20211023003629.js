@@ -90,7 +90,6 @@ function App() {
         onCursor={onCursor}
       />
       <HomeMain onCursor={onCursor} />
-      <Footer onCursor={onCursor} />
     </ThemeProvider>
   )
 }
