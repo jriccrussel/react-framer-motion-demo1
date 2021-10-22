@@ -76,7 +76,7 @@ function App() {
         setToggleMenu={setToggleMenu}
         onCursor={onCursor}
       />
-      <HomeMain onCursor={onCursor} />
+      <HomeMain />
     </ThemeProvider>
   )
 }

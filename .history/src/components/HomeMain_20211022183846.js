@@ -7,8 +7,8 @@ import HomeAbout from './HomeSection/HomeAbout'
 // Context
 import { useGlobalStateContext, useGlobalDispatchContext } from '../context/context'
 
-// const HomeMain = ({onCursor}) => {
 const HomeMain = () => {
+
     const {cursorStyles} = useGlobalStateContext()
     const dispatch = useGlobalDispatchContext()
 

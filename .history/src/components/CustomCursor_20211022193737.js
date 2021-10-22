@@ -28,6 +28,7 @@ const CustomCursor = ({toggleMenu}) => {
         cursor.current.style.top = `${clientY}px`;
     }
 
+
     useEffect(() => {
         document.addEventListener("mousemove", onMouseMove)
         return () => {
@@ -40,7 +41,6 @@ const CustomCursor = ({toggleMenu}) => {
             <Cursor
                 className={`${!!cursorType ? "hovered" : ""} ${cursorType} ${toggleMenu ? "nav-open" : ""}`}
                 style={{left: `${mousePosition.x}px`, top: `${mousePosition.y}px`}}
-                ref={cursor}
             />
         </>
     )

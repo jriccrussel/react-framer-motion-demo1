@@ -7,23 +7,18 @@ import HomeAbout from './HomeSection/HomeAbout'
 // Context
 import { useGlobalStateContext, useGlobalDispatchContext } from '../context/context'
 
-// const HomeMain = ({onCursor}) => {
-const HomeMain = () => {
-    const {cursorStyles} = useGlobalStateContext()
-    const dispatch = useGlobalDispatchContext()
-
-    const onCursor = cursorType => {
-        cursorType = (cursorStyles.includes(cursorType) && cursorType) || false
-        dispatch({ type: "CURSOR_TYPE", cursorType: cursorType })
-    }
+const HomeMain = ({onCursor}) => {
 
     return (
-        <>
+        <div
+            onMouseEnter={() => onCursor("hovered")}
+            onMouseLeave={onCursor}
+        >
             <HomeBanner onCursor={onCursor}/>
-            <HomeContent />
+            <HomeContent onCursor={onCursor}/>
             <HomeFeatured onCursor={onCursor}/>
-            <HomeAbout/>
-        </>
+            <HomeAbout onCursor={onCursor}/>
+        </div>
     )
 }
 

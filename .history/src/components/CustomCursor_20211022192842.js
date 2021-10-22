@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React,{useState, useEffect, useRef} from 'react'
 
 import { Cursor } from '../styles/GlobalStyles'
 
@@ -17,15 +17,10 @@ const CustomCursor = ({toggleMenu}) => {
     })
 
     // Mouse Position Event 
-    // const onMouseMove = event => {
-    //     const { pageX: x, pageY: y } = event
-    //     setMousePosition({ x, y })
-    // }
-
-    const onMouseMove = event => {
-        const { clientX, clientY } = event
+    const onMouseMove = (e) => {
+        const { pageX: x, pageY: y } = e
         cursor.current.style.left = `${clientX}px`;
-        cursor.current.style.top = `${clientY}px`;
+    cursor.current.style.top = `${clientY}px`;
     }
 
     useEffect(() => {
@@ -40,7 +35,7 @@ const CustomCursor = ({toggleMenu}) => {
             <Cursor
                 className={`${!!cursorType ? "hovered" : ""} ${cursorType} ${toggleMenu ? "nav-open" : ""}`}
                 style={{left: `${mousePosition.x}px`, top: `${mousePosition.y}px`}}
-                ref={cursor}
+                ref = {cursor}
             />
         </>
     )

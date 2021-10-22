@@ -28,6 +28,7 @@ const CustomCursor = ({toggleMenu}) => {
         cursor.current.style.top = `${clientY}px`;
     }
 
+
     useEffect(() => {
         document.addEventListener("mousemove", onMouseMove)
         return () => {

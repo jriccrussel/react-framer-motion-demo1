@@ -7,15 +7,15 @@ import HomeAbout from './HomeSection/HomeAbout'
 // Context
 import { useGlobalStateContext, useGlobalDispatchContext } from '../context/context'
 
-// const HomeMain = ({onCursor}) => {
-const HomeMain = () => {
-    const {cursorStyles} = useGlobalStateContext()
-    const dispatch = useGlobalDispatchContext()
+const HomeMain = ({onCursor}) => {
 
-    const onCursor = cursorType => {
-        cursorType = (cursorStyles.includes(cursorType) && cursorType) || false
-        dispatch({ type: "CURSOR_TYPE", cursorType: cursorType })
-    }
+    // const {cursorStyles} = useGlobalStateContext()
+    // const dispatch = useGlobalDispatchContext()
+
+    // const onCursor = cursorType => {
+    //     cursorType = (cursorStyles.includes(cursorType) && cursorType) || false
+    //     dispatch({ type: "CURSOR_TYPE", cursorType: cursorType })
+    // }
 
     return (
         <>
