@@ -17,9 +17,9 @@ const Header = ({ onCursor, toggleMenu, setToggleMenu, menuPosition, setMenuPosi
 
     const hamburger = useRef(null)
 
-    const position = useElementPosition(hamburger)
+    // const position = useElementPosition(hamburger)
 
-    // const position = useElePos(hamburger)
+    const position = useElePos(hamburger)
 
     const toggleTheme = () => {
         if(currentTheme === "dark") {
