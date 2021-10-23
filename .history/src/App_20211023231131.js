@@ -81,8 +81,8 @@ function App() {
     // Context "TOGGLE_THEME" => set  <ThemeProvider theme={currentTheme === "dark" ? darkTheme : lightTheme}> => const toggleTheme && window.localStorage.setItem("theme", currentTheme) && <span onClick={toggleTheme} onMouseEnter={() => onCursor("pointer")} onMouseLeave={onCursor} ></span> | inig click ma change ang color sa theme
     <ThemeProvider theme={currentTheme === "dark" ? darkTheme : lightTheme}>
       <GlobalStyle />
-      <CustomCursor toggleMenu={toggleMenu}/>
-      {/* <CustomCursorTwo toggleMenu={toggleMenu}/> */}
+      {/* <CustomCursor toggleMenu={toggleMenu}/> */}
+      <CustomCursorTwo toggleMenu={toggleMenu}/>
       <Header 
         onCursor={onCursor}
         toggleMenu={toggleMenu}
@@ -90,16 +90,15 @@ function App() {
         menuPosition={menuPosition}
         setMenuPosition={setMenuPosition}
       />
-      <Navigation 
-        toggleMenu={toggleMenu}
-        setToggleMenu={setToggleMenu}
-        onCursor={onCursor}
-      />
-      {/* <NavigationTwo 
+      {/* <Navigation 
         toggleMenu={toggleMenu}
         setToggleMenu={setToggleMenu}
         onCursor={onCursor}
       /> */}
+      <NavigationTwo 
+        toggleMenu={toggleMenu}
+        setToggleMenu={setToggleMenu}
+      />
       <HomeMain onCursor={onCursor} />
       <Footer onCursor={onCursor} />
     </ThemeProvider>

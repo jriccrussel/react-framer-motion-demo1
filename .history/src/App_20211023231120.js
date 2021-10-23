@@ -90,16 +90,15 @@ function App() {
         menuPosition={menuPosition}
         setMenuPosition={setMenuPosition}
       />
-      <Navigation 
-        toggleMenu={toggleMenu}
-        setToggleMenu={setToggleMenu}
-        onCursor={onCursor}
-      />
-      {/* <NavigationTwo 
+      {/* <Navigation 
         toggleMenu={toggleMenu}
         setToggleMenu={setToggleMenu}
         onCursor={onCursor}
       /> */}
+      <NavigationTwo 
+        toggleMenu={toggleMenu}
+        setToggleMenu={setToggleMenu}
+      />
       <HomeMain onCursor={onCursor} />
       <Footer onCursor={onCursor} />
     </ThemeProvider>

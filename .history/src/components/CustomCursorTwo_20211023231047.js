@@ -4,7 +4,7 @@ import { Cursor } from '../styles/GlobalStyles'
 
 import { useGlobalStateContext } from '../context/context'
 
-const CustomCursorTwo = ({toggleMenu}) => {
+const CustomCursorTwo = () => {
     const {cursorType} = useGlobalStateContext()
 
     const [mousePos, setMousePos] = useState({
