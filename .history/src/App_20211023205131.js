@@ -96,6 +96,8 @@ function App() {
       />
       <HomeMain onCursor={onCursor} />
       <Footer onCursor={onCursor} />
+
+      {children}
     </ThemeProvider>
   )
 }

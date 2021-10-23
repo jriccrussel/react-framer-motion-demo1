@@ -30,18 +30,13 @@ const Header = ({ onCursor, toggleMenu, setToggleMenu, menuPosition, setMenuPosi
     }
 
     // CustomCursorTwo
-    const {cursorStyles} = useGlobalStateContext()
-    // const dispatch = useGlobalDispatchContext()
+    const {currentTheme, cursorStyles} = useGlobalStateContext()
+    const dispatch = useGlobalDispatchContext()
 
     const customCursor = cursorType => {
         cursorType = (cursorStyles.includes(cursorType) && cursorType) || false
         dispatch({ type: "CURSOR_TYPE", cursorType: cursorType })
     }
-
-    // INLINE FUNCTION:
-    // onMouseEnter={() => customCursor("hovered")}
-    // onMouseLeave={customCursor}
-
     // End CustomCursorTwo
 
     useEffect(() => {

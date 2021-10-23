@@ -29,21 +29,6 @@ const Header = ({ onCursor, toggleMenu, setToggleMenu, menuPosition, setMenuPosi
         setMenuPosition({ x: position.x, y: position.y + 72 })
     }
 
-    // CustomCursorTwo
-    const {cursorStyles} = useGlobalStateContext()
-    // const dispatch = useGlobalDispatchContext()
-
-    const customCursor = cursorType => {
-        cursorType = (cursorStyles.includes(cursorType) && cursorType) || false
-        dispatch({ type: "CURSOR_TYPE", cursorType: cursorType })
-    }
-
-    // INLINE FUNCTION:
-    // onMouseEnter={() => customCursor("hovered")}
-    // onMouseLeave={customCursor}
-
-    // End CustomCursorTwo
-
     useEffect(() => {
         window.localStorage.setItem("theme", currentTheme)
     }, [currentTheme])

@@ -1,0 +1,34 @@
+import React, { useEffect, useState } from 'react'
+
+import { Cursor } from '../styles/GlobalStyles'
+
+const CustomCursorTwo = () => {
+
+    const [mousePos, setMousePos] = useState({
+        x: 400,
+        y: 400, 
+    })
+
+    const onMouseGo = event => {
+        const { pageX: x, pageY: y} = event
+        setMousePos(x, y)
+    }
+
+    useEffect(() => {
+        document.addEventListener("mousemove", onMouseGo)
+
+        return () => {
+            document.removeEventListener("mousemove", onMouseGo)
+        }
+    }, [])
+
+    return (
+        <>
+            <Cursor 
+                style={{left: `${mousePosition.x}px`, top: `${mousePosition.y}px`}}
+            />
+        </>
+    )
+}
+
+export default CustomCursorTwo

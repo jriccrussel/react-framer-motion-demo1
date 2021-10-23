@@ -38,7 +38,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-function App() {
+function App({children}) {
 
   const [menuPosition, setMenuPosition] = useState({
     x: 0,
@@ -96,6 +96,8 @@ function App() {
       />
       <HomeMain onCursor={onCursor} />
       <Footer onCursor={onCursor} />
+
+      {children}
     </ThemeProvider>
   )
 }

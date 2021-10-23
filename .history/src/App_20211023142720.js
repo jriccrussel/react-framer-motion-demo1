@@ -13,10 +13,6 @@ import HomeMain from './components/HomeMain'
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 
-
-import CustomCursorTwo from './components/CustomCursorTwo'
-
-
 // Global Styling 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
@@ -80,8 +76,7 @@ function App() {
     // Context "TOGGLE_THEME" => set  <ThemeProvider theme={currentTheme === "dark" ? darkTheme : lightTheme}> => const toggleTheme && window.localStorage.setItem("theme", currentTheme) && <span onClick={toggleTheme} onMouseEnter={() => onCursor("pointer")} onMouseLeave={onCursor} ></span> | inig click ma change ang color sa theme
     <ThemeProvider theme={currentTheme === "dark" ? darkTheme : lightTheme}>
       <GlobalStyle />
-      {/* <CustomCursor toggleMenu={toggleMenu}/> */}
-      <CustomCursorTwo />
+      <CustomCursor toggleMenu={toggleMenu}/>
       <Header 
         onCursor={onCursor}
         toggleMenu={toggleMenu}
