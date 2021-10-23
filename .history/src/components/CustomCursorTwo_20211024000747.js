@@ -47,13 +47,16 @@ export default CustomCursorTwo
 // Step 5 - App.js --> Add "const {currentTheme, cursorStyles} = useGlobalStateContext()" && "const dispatch = useGlobalDispatchContext()"
 // Step 6 - App.js --> Add "const onCursor = cursorType => {...}"
 
-// FOR THE HOVER TO RUN TO OTHER COMPONENET: 
-// Step 1 - App.js --> Add "onCursor" as prop === "<Header onCursor={onCursor}/>"
-// Step 2 - Header.js --> Add "onCursor" prop "const Header = ({ onCursor }) => {...}"
-// Step 3 - Header.js --> Add "onMouseEnter={() => onCursor("hovered")}" && "onMouseLeave={onCursor}" === "<Logo onMouseEnter={() => onCursor("hovered")} onMouseLeave={onCursor}> ...</Logo>"
-
-// TAKE NOTE
-// LAST STEP - CustomCursorTwo.js --> Add "className={`${!!cursorType ? "hovered" : ""} ${cursorType}`}" === "<Cursor className={`${!!cursorType ? "hovered" : ""} ${cursorType}`}/>""
-// LAST STEP - App.js --> Add "<CustomCursorTwo/>" === "<ThemeProvider>...<CustomCursorTwo/>...</ThemeProvider>"
+// FOR THE HOVER TO RUN
+// Step 1 - App.js --> Add "onCursor" prop === "<Header onCursor={onCursor}/>"
+// Step 2 - 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
 // 
 // 

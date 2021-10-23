@@ -54,6 +54,9 @@ export default CustomCursorTwo
 
 // TAKE NOTE
 // LAST STEP - CustomCursorTwo.js --> Add "className={`${!!cursorType ? "hovered" : ""} ${cursorType}`}" === "<Cursor className={`${!!cursorType ? "hovered" : ""} ${cursorType}`}/>""
-// LAST STEP - App.js --> Add "<CustomCursorTwo/>" === "<ThemeProvider>...<CustomCursorTwo/>...</ThemeProvider>"
+// 
+// 
+// 
+// 
 // 
 // 
